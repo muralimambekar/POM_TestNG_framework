@@ -5,7 +5,6 @@
     <classes>
       <class name="tesstCases.demoqa_sanity">
         <methods>
-          <include name="setup"/>
           <include name="TC01_login"/>
         </methods>
       </class> <!-- tesstCases.demoqa_sanity -->
