@@ -1,4 +1,4 @@
-package tesstCases;
+package testCases;
 
 import java.io.IOException;
 
@@ -10,10 +10,10 @@ import testBase.testbase;
 public class demoqa_sanity extends testbase {
 	
 	
-	@Test (priority = 1)
-	void TC01_login() throws IOException {
+	@Test 
+	void TC01_login() throws IOException, InterruptedException {
 		homePage hm=setup();
-		hm.textBoxFunctionality();
+		hm.login_Orange_HRM();
 	}
 
 }

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tesstCases.demoqa_sanity">
+      <class name="testCases.demoqa_sanity">
         <methods>
           <include name="TC01_login"/>
         </methods>
-      </class> <!-- tesstCases.demoqa_sanity -->
+      </class> <!-- testCases.demoqa_sanity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

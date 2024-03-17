@@ -8,16 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import testBase.testbase;
+import utilities.configFile;
 
-public class homePage extends testbase{
+public class homePage {
 	private WebDriver driver;
 	
-	public homePage(WebDriver driver){
-		this.driver=driver;
+	public homePage(WebDriver r_driver){
+		this.driver=r_driver;
 		PageFactory.initElements(driver, this); 
 	}
 	
@@ -25,11 +27,30 @@ public class homePage extends testbase{
 	@FindBy (xpath = "//span[text()='Text Box']")
 	WebElement textBoxIcon;
 	
-	public void textBoxFunctionality() {
+	@FindBy(name="username")
+	WebElement userName;
+	
+	@FindBy(name="password")
+	WebElement password;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement loginBtn;
+	
+	
+	@FindBy(xpath="//h6[text()='Dashboard']")
+	WebElement dasboardHeading;
+	
+	public void login_Orange_HRM() throws IOException, InterruptedException {
+		System.out.println(configFile.getVal("username"));
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOf(textBoxIcon));
-		textBoxIcon.click();
-		driver.close();
+		wait.until(ExpectedConditions.visibilityOf(userName));
+		userName.sendKeys(configFile.getVal("username"));
+		password.sendKeys(configFile.getVal("password"));
+		loginBtn.click();
+		System.out.println("clicked on login");
+		wait.until(ExpectedConditions.visibilityOf(dasboardHeading));
+		Thread.sleep(3000);
+		//driver.close();
 	}
 
 }
