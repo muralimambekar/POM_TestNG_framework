@@ -1,6 +1,12 @@
-# ignore ALL .log files
+# ignore ALL .html files
 
+*.html
 
-# ignore ALL files in ANY directory named temp
-target/
-/test-output
+*.xml
+
+test-output/*
+
+test-output/*.xml
+
+test-output/*.html
+
