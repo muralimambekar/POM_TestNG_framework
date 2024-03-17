@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="testCases.demoqa_sanity" class="method navigator-link" hash-for-method="TC01_login">TC01_login</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.demoqa_sanity" class="method navigator-link" hash-for-method="TC01_login_fails_with_invalid_credentials">TC01_login_fails_with_invalid_credentials</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -129,6 +134,13 @@
                   <a name="TC01_login">
                   </a> <!-- TC01_login -->
                   <span class="method-name">TC01_login</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC01_login_fails_with_invalid_credentials">
+                  </a> <!-- TC01_login_fails_with_invalid_credentials -->
+                  <span class="method-name">TC01_login_fails_with_invalid_credentials</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,16 +197,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TC01_login')
 data.setCell(0, 2, 'testCases.demoqa_sanity')
-data.setCell(0, 3, 14785);
+data.setCell(0, 3, 14776);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TC01_login_fails_with_invalid_credentials')
+data.setCell(1, 2, 'testCases.demoqa_sanity')
+data.setCell(1, 3, 12602);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -225,10 +241,18 @@ return data;
                 <span class="method-name">TC01_login</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">14795 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">14783 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">TC01_login_fails_with_invalid_credentials</span>
+                <span class="method-start">15591 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">28196 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

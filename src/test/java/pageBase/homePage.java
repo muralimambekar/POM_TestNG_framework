@@ -40,17 +40,31 @@ public class homePage {
 	@FindBy(xpath="//h6[text()='Dashboard']")
 	WebElement dasboardHeading;
 	
+	
+	@FindBy(xpath="//p[text()='Invalid credentials']")
+	WebElement invalidCredentialErrorMsg;
+	
 	public void login_Orange_HRM() throws IOException, InterruptedException {
-		System.out.println(configFile.getVal("username"));
+		//System.out.println(configFile.getVal("username"));
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(userName));
 		userName.sendKeys(configFile.getVal("username"));
 		password.sendKeys(configFile.getVal("password"));
 		loginBtn.click();
-		System.out.println("clicked on login");
+		//System.out.println("clicked on login");
 		wait.until(ExpectedConditions.visibilityOf(dasboardHeading));
 		Thread.sleep(3000);
-		//driver.close();
+	}
+	
+	public void login_Orange_HRM_invalid_credentials() throws IOException, InterruptedException {
+		//System.out.println(configFile.getVal("username"));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(userName));
+		userName.sendKeys(configFile.getVal("username"));
+		password.sendKeys("wrongPwd");
+		loginBtn.click();
+		wait.until(ExpectedConditions.visibilityOf(invalidCredentialErrorMsg));
+		Thread.sleep(3000);
 	}
 
 }

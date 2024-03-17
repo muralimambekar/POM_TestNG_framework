@@ -5,7 +5,9 @@
     <classes>
       <class name="testCases.demoqa_sanity">
         <methods>
-          <include name="TC01_login"/>
+          <include name="TC01_login_fails_with_invalid_credentials"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- testCases.demoqa_sanity -->
     </classes>
