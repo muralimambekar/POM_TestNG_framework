@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import pageBase.homePage;
+import pageObjects.homePage;
 import testBase.testbase;
 
 public class demoqa_sanity extends testbase {

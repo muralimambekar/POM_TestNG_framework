@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pageBase.homePage;
+import pageObjects.homePage;
 import utilities.configFile;
 
 public class testbase {
