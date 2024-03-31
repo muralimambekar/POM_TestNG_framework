@@ -8,18 +8,21 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import base.PageBase;
+import base.testBase;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import testBase.testbase;
+import utilities.DriverFactory;
 import utilities.configFile;
 
-public class homePage {
+public class homePage  extends PageBase  {
 	private WebDriver driver;
 	
-	public homePage(WebDriver r_driver){
-		this.driver=r_driver;
+	public homePage() throws IOException{
+		this.driver=DriverFactory.getWebDriver();
 		PageFactory.initElements(driver, this); 
 	}
 	
