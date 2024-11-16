@@ -48,15 +48,18 @@ public class homePage  extends PageBase  {
 	WebElement invalidCredentialErrorMsg;
 	
 	public void login_Orange_HRM() throws IOException, InterruptedException {
-		//System.out.println(configFile.getVal("username"));
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOf(userName));
-		userName.sendKeys(configFile.getVal("username"));
-		password.sendKeys(configFile.getVal("password"));
-		loginBtn.click();
-		//System.out.println("clicked on login");
-		wait.until(ExpectedConditions.visibilityOf(dasboardHeading));
-		Thread.sleep(3000);
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.visibilityOf(userName));
+			userName.sendKeys(configFile.getVal("username"));
+			password.sendKeys(configFile.getVal("password"));
+			clickElement(loginBtn,"loginBtn");
+			wait.until(ExpectedConditions.visibilityOf(dasboardHeading));
+			Thread.sleep(3000);
+		}catch(Exception e) {
+			e.printStackTrace();
+			takeScreenshot();
+		}
 	}
 	
 	public void login_Orange_HRM_invalid_credentials() throws IOException, InterruptedException {
