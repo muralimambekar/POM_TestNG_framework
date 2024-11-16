@@ -1,21 +1,6 @@
 # ignore ALL .html files
+/*.html
+/*.xml
 
-*.html
 
-*.xml
-
-test-output/Default suite/Default test.html
-test-output/Default suite/Default test.xml
-test-output/emailable-report.html
-test-output/index.html
-test-output/junitreports/TEST-testCases.demoqa_sanity.xml
-test-output/old/Default suite/methods-alphabetical.html
-test-output/old/Default suite/methods.html
-test-output/testng-results.xml
-
-test-output/*
-
-test-output/*.xml
-
-test-output/*.html
 
