@@ -20,10 +20,12 @@ import utilities.configFile;
 
 public class homePage  extends PageBase  {
 	private WebDriver driver;
+	private WebDriverWait wait;
 	
 	public homePage() throws IOException{
 		this.driver=DriverFactory.getWebDriver();
 		PageFactory.initElements(driver, this); 
+		wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	}
 	
 	
@@ -49,7 +51,6 @@ public class homePage  extends PageBase  {
 	
 	public void login_Orange_HRM() throws IOException, InterruptedException {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(userName));
 			userName.sendKeys(configFile.getVal("username"));
 			password.sendKeys(configFile.getVal("password"));
@@ -62,15 +63,19 @@ public class homePage  extends PageBase  {
 		}
 	}
 	
+
 	public void login_Orange_HRM_invalid_credentials() throws IOException, InterruptedException {
-		//System.out.println(configFile.getVal("username"));
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		try {
 		wait.until(ExpectedConditions.visibilityOf(userName));
 		userName.sendKeys(configFile.getVal("username"));
 		password.sendKeys("wrongPwd");
 		loginBtn.click();
 		wait.until(ExpectedConditions.visibilityOf(invalidCredentialErrorMsg));
 		Thread.sleep(3000);
+		}catch(Exception e) {
+			e.printStackTrace();
+			takeScreenshot();
+		}
 	}
 
 }
