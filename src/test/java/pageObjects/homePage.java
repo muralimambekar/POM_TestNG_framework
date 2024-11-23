@@ -70,7 +70,7 @@ public class homePage  extends PageBase  {
 		userName.sendKeys(configFile.getVal("username"));
 		password.sendKeys("wrongPwd");
 		loginBtn.click();
-		wait.until(ExpectedConditions.visibilityOf(invalidCredentialErrorMsg));
+		wait.until(ExpectedConditions.visibilityOf(dasboardHeading));
 		Thread.sleep(3000);
 		}catch(Exception e) {
 			e.printStackTrace();
