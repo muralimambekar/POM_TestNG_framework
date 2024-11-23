@@ -17,7 +17,13 @@ public class demoqa_sanity extends testBase {
 	}
 	
 	@Test (priority=2)
-	void TC01_login_fails_with_invalid_credentials() throws IOException, InterruptedException {
+	void TC02_login_fails_with_invalid_credentials() throws IOException, InterruptedException {
+		homePage hm=new homePage();
+		hm.login_Orange_HRM_invalid_credentials();
+	}
+	
+	@Test (priority=3)
+	void TC03_login_fails_with_screenshot() throws IOException, InterruptedException {
 		homePage hm=new homePage();
 		hm.login_Orange_HRM_invalid_credentials();
 	}
