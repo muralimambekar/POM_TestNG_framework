@@ -38,11 +38,25 @@ public class PageBase {
 		System.out.println("clicked on "+elementName);
 	}
 	
+	public void isVisible(WebElement element, String elementName) {
+		try{
+			wait.until(ExpectedConditions.visibilityOf(element));
+			if(element.isDisplayed()) {
+				System.out.println(elementName+" is displayed ");
+			}else {
+				System.out.println(elementName+" is not displayed ");
+			}
+		}catch(Exception e) {
+			//System.out.println(elementName+" is not displayed ");
+		}
+	}
+	
+	
 	public void takeScreenshot() {
 		String dateTime=String.valueOf(System.currentTimeMillis());
 		File scrFile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(scrFile, new File("./screenshots/img_"+dateTime));
+			FileUtils.copyFile(scrFile, new File("./screenshots/img_"+dateTime+".png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

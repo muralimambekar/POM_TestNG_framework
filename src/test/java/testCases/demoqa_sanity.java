@@ -22,10 +22,5 @@ public class demoqa_sanity extends testBase {
 		hm.login_Orange_HRM_invalid_credentials();
 	}
 	
-	@Test (priority=3)
-	void TC03_login_fails_with_screenshot() throws IOException, InterruptedException {
-		homePage hm=new homePage();
-		hm.login_Orange_HRM_invalid_credentials();
-	}
 
 }
